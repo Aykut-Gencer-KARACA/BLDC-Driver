@@ -1,0 +1,67 @@
+(version 1)
+
+# --- KiCad DRC Ayarlayıcı: başlangıç (JLCPCB, 6 katman, 2026-09-26 18:33)
+# Bu blok KiCad DRC Ayarlayıcı tarafından yazılır ve her güncellemede yenilenir.
+# Kendi kurallarını bloğun dışına (aşağıya) ekle; aynı kısıtta seninki geçerli olur.
+
+(rule "JLCPCB: PTH pad deliği"
+	(condition "A.Type == 'Pad' && A.isPlated()")
+	(constraint hole_size (min 0.25mm) (max 6.25mm)))
+
+(rule "JLCPCB: PTH ≥0.5 önerisi (uyarı)"
+	(condition "A.Type == 'Pad' && A.isPlated()")
+	(constraint assertion "A.Hole_Size_X >= 0.5mm && A.Hole_Size_Y >= 0.5mm")
+	(severity warning))
+
+(rule "JLCPCB: Via-in-pad via deliği"
+	(condition "A.Type == 'Via'")
+	(constraint hole_size (min 0.25mm) (max 0.5mm)))
+
+(rule "JLCPCB: NPTH delik"
+	(condition "A.Pad_Type == 'NPTH, mechanical'")
+	(constraint hole_size (min 0.55mm))
+	(constraint hole_clearance (min 0.25mm)))
+
+(rule "JLCPCB: Kaplamalı slot"
+	(condition "A.Type == 'Pad' && A.isPlated() && A.Hole_Size_X != A.Hole_Size_Y")
+	(constraint hole_size (min 0.4mm) (max 6.25mm))
+	(constraint assertion "A.Hole_Size_X >= 2 * A.Hole_Size_Y || A.Hole_Size_Y >= 2 * A.Hole_Size_X"))
+
+(rule "JLCPCB: Kaplamasız slot"
+	(condition "A.Pad_Type == 'NPTH, mechanical' && A.Hole_Size_X != A.Hole_Size_Y")
+	(constraint hole_size (min 1.05mm))
+	(constraint hole_clearance (min 0.25mm)))
+
+(rule "JLCPCB: Castellated delik"
+	(condition "A.Fabrication_Property == 'Castellated pad'")
+	(constraint hole_size (min 0.55mm)))
+
+(rule "JLCPCB: Castellated delik aralığı"
+	(condition "A.Fabrication_Property == 'Castellated pad' && B.Fabrication_Property == 'Castellated pad'")
+	(constraint hole_to_hole (min 0.55mm)))
+
+(rule "JLCPCB: PTH pad halkası"
+	(condition "A.Type == 'Pad' && A.isPlated() && (A.Hole_Size_X >= 0.5mm || A.Hole_Size_Y >= 0.5mm)")
+	(constraint annular_width (min 0.2mm)))
+
+(rule "JLCPCB: NPTH pad halkası"
+	(condition "A.Pad_Type == 'NPTH, mechanical' && A.Size_X > A.Hole_Size_X")
+	(constraint assertion "A.Size_X - A.Hole_Size_X >= 0.9mm && A.Size_Y - A.Hole_Size_Y >= 0.9mm"))
+
+(rule "JLCPCB: Via delikten deliğe"
+	(condition "A.Type == 'Via' && B.Type == 'Via'")
+	(constraint hole_to_hole (min 0.25mm)))
+
+(rule "JLCPCB: Via deliği - iz"
+	(condition "A.Type == 'Via'")
+	(constraint hole_clearance (min 0.25mm)))
+
+(rule "JLCPCB: Min SMD pad (uyarı)"
+	(condition "A.Type == 'Pad' && A.Pad_Type == 'SMD'")
+	(constraint assertion "A.Size_X >= 0.25mm && A.Size_Y >= 0.25mm")
+	(severity warning))
+
+(rule "JLCPCB: Kör/gömülü/mikro via yok"
+	(constraint disallow buried_via blind_via micro_via))
+
+# --- KiCad DRC Ayarlayıcı: bitiş ---
