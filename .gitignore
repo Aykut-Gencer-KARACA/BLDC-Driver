@@ -1,0 +1,20 @@
+# KiCad local and temporary files
+*.kicad_prl
+*.lck
+*.bak
+*-backups/
+fp-info-cache
+_autosave-*
+
+# OS junk
+Thumbs.db
+.DS_Store
+
+# Local working notes (not published)
+Mds/
+
+# Vendor datasheets (third-party PDFs, kept local)
+datasheets/
+
+# KiCad local history
+.history/

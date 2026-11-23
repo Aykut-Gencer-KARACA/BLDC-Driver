@@ -1,0 +1,173 @@
+(footprint "RES-ADJ-TH_RK09Y11L0001"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -4 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "078496fb-a88c-4ac9-acb1-31d549e3c091")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "RES-ADJ-TH_RK09Y11L0001"
+		(at 0 4 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a25e9fb6-d114-4622-ac15-be205b523104")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2bd853ae-0969-4345-87f9-b62197b62a56")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f314389b-a491-46eb-8f8b-c61d999da866")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "LCSC Part" "C470717"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6be8a9a5-ef4e-4f80-830e-7a0ec5e6701d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -4.75 -1.9)
+		(end -4.75 3.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "512e4338-ae28-499e-b002-3d27d6b07d68")
+	)
+	(fp_line
+		(start -4.75 3.5)
+		(end 4.75 3.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8ae5c1a4-8ae0-43ae-aa38-eb3824e64d39")
+	)
+	(fp_line
+		(start 3.5 3.5)
+		(end -3.5 3.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "bcf90fa7-5417-4043-a52d-dc6bd0914050")
+	)
+	(fp_line
+		(start 4.75 -1.9)
+		(end -4.75 -1.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c5783d65-2d1c-4a74-9796-55a57a87be68")
+	)
+	(fp_line
+		(start 4.75 3.5)
+		(end 4.75 -1.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c70a6dcd-227d-4eda-ae03-cffb49073826")
+	)
+	(fp_rect
+		(start -4.8 -1.9)
+		(end 4.8 3.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "82e5b62a-4def-4e53-a81f-8f6b866aafb1")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -4.4 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "3e39df07-123a-4899-aea6-5e703bb467e9")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -2.5 0 270)
+		(size 1.8 1.8)
+		(drill oval 0.999744 0.999998)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "85c508d0-4092-4b9b-b47e-0c9dc6431dc3")
+	)
+	(pad "2" thru_hole circle
+		(at 0 0 270)
+		(size 1.8 1.8)
+		(drill oval 0.999744 0.999998)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "3a5cc5a6-63d8-4c66-98a3-bd18e8226d0c")
+	)
+	(pad "3" thru_hole circle
+		(at 2.5 0 270)
+		(size 1.8 1.8)
+		(drill oval 0.999744 0.999998)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dfae2c90-f31b-4076-aee4-a65a89171724")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/EasyEDA.3dshapes/RES-ADJ-TH_RK09Y11L0001.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
